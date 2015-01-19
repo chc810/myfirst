@@ -3,7 +3,7 @@ package com.test.thread;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 自管理的线程写法，可以不让线程实现Thread类
+ * 鑷鐞嗙殑绾跨▼锛屼笉鐢ㄧ户鎵跨殑鏂瑰紡
  * @author cuihc
  *
  */
@@ -39,6 +39,7 @@ public class SelfManaged implements Runnable{
 		}
 		for (int i=0; i<5;i++) {
 			new SelfManaged();
+			
 		}
 	}
 	
