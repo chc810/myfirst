@@ -14,6 +14,7 @@ public class UrlClazzLoaderTest {
 		PersonI p = (PersonI)o;
 		p.setName("张三");
 		System.out.println(p.getName() + "," + p.getAge());
+		
 	}
 
 }
