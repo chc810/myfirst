@@ -41,6 +41,7 @@ public class TestFirst {
 	@Test
 	public void stringEncode() throws UnsupportedEncodingException {
 		String msg=new String("不改".getBytes("gbk"));
+		System.out.println(msg);
 		String s_iso88591 = new String("中ni".getBytes("UTF-8"),"ISO8859-1");
 		System.out.println(s_iso88591);
 		String s_utf8 = new String(s_iso88591.getBytes("ISO8859-1"),"utf-8");

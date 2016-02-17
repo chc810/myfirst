@@ -11,7 +11,7 @@ public class LoadResourceTest {
 
 	@Test
 	public void test() throws IOException {
-		InputStream is = Student.class.getResourceAsStream("test.txt");
+		InputStream is = Student.class.getResourceAsStream("test.txt");       //相对于Student.class文件的位置
 		BufferedReader br = new BufferedReader(new InputStreamReader(is));
 		String sr = "";
 		while((sr = br.readLine()) != null) {
@@ -22,7 +22,7 @@ public class LoadResourceTest {
 	
 	@Test
 	public void test1() throws IOException {
-		InputStream is = Student.class.getResourceAsStream("/test.txt");
+		InputStream is = Student.class.getResourceAsStream("/test.txt");          //以"/"开头的是classPath更目录下的文件
 		BufferedReader br = new BufferedReader(new InputStreamReader(is));
 		String sr = "";
 		while((sr = br.readLine()) != null) {

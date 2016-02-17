@@ -32,14 +32,32 @@ public class IOUtil {
 		in.close();
 	}
 	
+	//两种方式转换byte --> int，在java中byte默认是-127到127有负数
 	public static void printHex(byte[] bs)throws IOException{
 		int i = 1;
+//		for (byte b : bs) {
+//			int bb;
+//			if (b<0) {
+//				bb = b + 256;
+//			} else {
+//				bb = b;
+//			}
+//			if(bb <= 0xf){
+//				//单位数前面补0
+//				System.out.print("0");
+//			}
+//			System.out.print(Integer.toHexString(bb)+"  ");
+//			if(i++%10==0){
+//				System.out.println();
+//			}
+//		}
+		
 		for (byte b : bs) {
-			if(b <= 0xf){
+			if((b & 0xff) <= 0xf){
 				//单位数前面补0
 				System.out.print("0");
 			}
-			System.out.print(Integer.toHexString(b)+"  ");
+			System.out.print(Integer.toHexString(b & 0xff)+"  ");
 			if(i++%10==0){
 				System.out.println();
 			}
