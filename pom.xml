@@ -73,7 +73,6 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>5.1.3.Final</version>
 		</dependency>
 		
 		<!-- springmvc -->
@@ -82,6 +81,40 @@
 			<artifactId>spring-webmvc</artifactId>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+		</dependency>
+		<!-- aspectjweaver -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.6.9</version>
+		</dependency>
 		<!-- servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -111,9 +144,61 @@
 			<artifactId>jsch</artifactId>
 			<version>0.1.52</version>
 		</dependency>
+		
+		
+		
+		<!-- <dependency>  
+            <groupId>com.experlog</groupId>  
+            <artifactId>xapool</artifactId>  
+            <version>1.5.0</version>  
+        </dependency>   -->
+        <dependency>  
+            <groupId>org.ow2.jotm</groupId>  
+            <artifactId>jotm-core</artifactId>  
+            <version>2.2.3</version>  
+        </dependency>  
+        <dependency>
+			<groupId>org.ow2.spec.ee</groupId>
+			<artifactId>ow2-connector-1.5-spec</artifactId>
+			<version>1.0.13</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jacorb</groupId>
+			<artifactId>jacorb</artifactId>
+			<version>3.7</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.experlog</groupId>
+			<artifactId>xapool</artifactId>
+			<version>1.6-beta</version>
+		</dependency>
+		
+		<!-- <dependency>
+			<groupId>org.ow2.cmi</groupId>
+			<artifactId>cmi-config</artifactId>
+			<version>2.0-RC7</version>
+		</dependency> -->
+		
+		<dependency>
+			<groupId>org.ow2.cmi.osgi</groupId>
+			<artifactId>cmi-all</artifactId>
+			<version>2.2.6</version>
+		</dependency>
+		
+	<!-- mysql驱动-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.24</version>
+		</dependency>
 	
-	
-  
+  		<!-- <dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency> -->
   </dependencies>
   
   <build>
