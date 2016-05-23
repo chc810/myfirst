@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Student implements Serializable{
 	private String stuno;
 	private String stuname;
-	//¸ÃÔªËØ²»»á½øĞĞjvmÄ¬ÈÏµÄĞòÁĞ»¯,Ò²¿ÉÒÔ×Ô¼ºÍê³ÉÕâ¸öÔªËØµÄĞòÁĞ»¯
+	//è¯¥å…ƒç´ ä¸ä¼šè¿›è¡Œjvmé»˜è®¤çš„åºåˆ—åŒ–,ä¹Ÿå¯ä»¥è‡ªå·±å®Œæˆè¿™ä¸ªå…ƒç´ çš„åºåˆ—åŒ–
 	private transient int stuage;  
 	
 	public Student(String stuno, String stuname, int stuage) {
@@ -40,12 +40,12 @@ public class Student implements Serializable{
 	}
 	 private void writeObject(java.io.ObjectOutputStream s)
 		        throws java.io.IOException{
-		 s.defaultWriteObject();//°ÑjvmÄÜÄ¬ÈÏĞòÁĞ»¯µÄÔªËØ½øĞĞĞòÁĞ»¯²Ù×÷
-		 s.writeInt(stuage);//×Ô¼ºÍê³ÉstuageµÄĞòÁĞ»¯
+		 s.defaultWriteObject();//æŠŠjvmèƒ½é»˜è®¤åºåˆ—åŒ–çš„å…ƒç´ è¿›è¡Œåºåˆ—åŒ–æ“ä½œ
+		 s.writeInt(stuage);//è‡ªå·±å®Œæˆstuageçš„åºåˆ—åŒ–
 	 }
 	 private void readObject(java.io.ObjectInputStream s)
 		        throws java.io.IOException, ClassNotFoundException{
-		  s.defaultReadObject();//°ÑjvmÄÜÄ¬ÈÏ·´ĞòÁĞ»¯µÄÔªËØ½øĞĞ·´ĞòÁĞ»¯²Ù×÷
-		  this.stuage = s.readInt();//×Ô¼ºÍê³ÉstuageµÄ·´ĞòÁĞ»¯²Ù×÷
+		  s.defaultReadObject();//æŠŠjvmèƒ½é»˜è®¤ååºåˆ—åŒ–çš„å…ƒç´ è¿›è¡Œååºåˆ—åŒ–æ“ä½œ
+		  this.stuage = s.readInt();//è‡ªå·±å®Œæˆstuageçš„ååºåˆ—åŒ–æ“ä½œ
 	}
 }

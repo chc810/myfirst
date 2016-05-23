@@ -19,32 +19,32 @@ public class RafDemo {
 			file.createNewFile();
 		
 		RandomAccessFile raf = new RandomAccessFile(file, "rw");
-		//Ö¸ÕëµÄÎ»ÖÃ
+		//æŒ‡é’ˆçš„ä½ç½®
 		System.out.println(raf.getFilePointer());
 		
-		raf.write('A');//Ö»Ğ´ÁËÒ»¸ö×Ö½Ú
+		raf.write('A');//åªå†™äº†ä¸€ä¸ªå­—èŠ‚
 		System.out.println(raf.getFilePointer());
 		raf.write('B');
 		
 		int i = 0x7fffffff;
-		//ÓÃwrite·½·¨Ã¿´ÎÖ»ÄÜĞ´Ò»¸ö×Ö½Ú£¬Èç¹ûÒª°ÑiĞ´½øÈ¥¾ÍµÃĞ´4´Î
-		raf.write(i >>> 24);//¸ß8Î»
+		//ç”¨writeæ–¹æ³•æ¯æ¬¡åªèƒ½å†™ä¸€ä¸ªå­—èŠ‚ï¼Œå¦‚æœè¦æŠŠiå†™è¿›å»å°±å¾—å†™4æ¬¡
+		raf.write(i >>> 24);//é«˜8ä½
 		raf.write(i >>> 16);
 		raf.write(i >>> 8);
 		raf.write(i);
 		System.out.println(raf.getFilePointer());
 		
-		//¿ÉÒÔÖ±½ÓĞ´Ò»¸öint
+		//å¯ä»¥ç›´æ¥å†™ä¸€ä¸ªint
 		raf.writeInt(i);
 		
-		String s = "ÖĞ";
+		String s = "ä¸­";
 		byte[] gbk = s.getBytes("gbk");
 		raf.write(gbk);
 		System.out.println(raf.length());
 		
-		//¶ÁÎÄ¼ş£¬±ØĞë°ÑÖ¸ÕëÒÆµ½Í·²¿
+		//è¯»æ–‡ä»¶ï¼Œå¿…é¡»æŠŠæŒ‡é’ˆç§»åˆ°å¤´éƒ¨
 		raf.seek(0);
-		//Ò»´ÎĞÔ¶ÁÈ¡,°ÑÎÄ¼şÖĞµÄÄÚÈİ¶¼¶Áµ½×Ö½ÚÊı×éÖĞ
+		//ä¸€æ¬¡æ€§è¯»å–,æŠŠæ–‡ä»¶ä¸­çš„å†…å®¹éƒ½è¯»åˆ°å­—èŠ‚æ•°ç»„ä¸­
 		byte[] buf = new byte[(int)raf.length()];
 		raf.read(buf);
 		

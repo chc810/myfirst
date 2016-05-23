@@ -23,11 +23,11 @@ public class IOUtilTest1 {
 	public void test() {
 		try {
 			
-			IOUtil.printHex("abcdÄãºÃ".getBytes("gbk"));
+			IOUtil.printHex("abcdä½ å¥½".getBytes("gbk"));
 			System.out.println();
-			IOUtil.printHex("abcdÄãºÃ".getBytes("utf-8"));
+			IOUtil.printHex("abcdä½ å¥½".getBytes("utf-8"));
 			System.out.println();
-			IOUtil.printHex("abcdÄãºÃ".getBytes());
+			IOUtil.printHex("abcdä½ å¥½".getBytes());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

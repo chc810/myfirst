@@ -18,7 +18,7 @@ public class JcraftTest {
 	
 	@Test
 	public void testReconnect() throws Exception {
-		JschClient client = new JschClient("root", "qnsoft", "10.130.29.182", 22);
+		final JschClient client = new JschClient("root", "qnsoft", "10.130.29.182", 22);
 		client.afterPropertiesSet();
 		
 		new Runnable(){

@@ -37,6 +37,18 @@ public class TestController {
 		 response.setHeader("Access-Control-Allow-Origin", "*");
 		 return modelAndView;
 	}
+	
+	@RequestMapping("/{s1}/{variable}")
+	public ModelAndView showView(@PathVariable String variable, @PathVariable String s1,HttpServletRequest request, HttpServletResponse response) {
+		 ModelAndView modelAndView = new ModelAndView();  
+		 System.out.println("variable=" + variable);
+		 System.out.println("s1=" + s1);
+		 System.out.println("aa=" + request.getParameter("aa"));
+		 modelAndView.setViewName("index");
+		 modelAndView.addObject("kk", variable);
+		 response.setHeader("Access-Control-Allow-Origin", "*");
+		 return modelAndView;
+	}
 
 	@RequestMapping("/cookie")
 	public ModelAndView testCookie(@CookieValue("JSESSIONID") String cookieValue, /*@CookieValue String hello,*/HttpServletRequest request) throws Exception{

@@ -13,10 +13,10 @@ public class DosDemo {
 		dos.writeInt(-10);
 		dos.writeLong(10l);
 		dos.writeDouble(10.5);
-		//²ÉÓÃutf-8±àÂëĞ´ ³ö
-		dos.writeUTF("ÖĞ¹ú");
-		//²ÉÓÃutf-16be±àÂëĞ´³ö
-		dos.writeChars("ÖĞ¹ú");
+		//é‡‡ç”¨utf-8ç¼–ç å†™ å‡º
+		dos.writeUTF("ä¸­å›½");
+		//é‡‡ç”¨utf-16beç¼–ç å†™å‡º
+		dos.writeChars("ä¸­å›½");
 		dos.close();
 		IOUtil.printHex(file);
 	}

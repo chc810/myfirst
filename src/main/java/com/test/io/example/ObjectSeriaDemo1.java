@@ -6,10 +6,10 @@ import java.io.ObjectInputStream;
 public class ObjectSeriaDemo1 {
 	public static void main(String[] args) throws Exception{
 		String file = "demo/obj.dat";
-		//1.对象的序列化
+		//1.瀵硅薄鐨勫簭鍒楀寲
 		/*ObjectOutputStream oos = new ObjectOutputStream(
 				new FileOutputStream(file));
-		Student stu = new Student("10001", "张三", 20);
+		Student stu = new Student("10001", "寮犱笁", 20);
 		oos.writeObject(stu);
 		oos.flush();
 		oos.close();*/

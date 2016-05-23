@@ -13,7 +13,7 @@ public class RafReadDemo {
 		RandomAccessFile raf = new RandomAccessFile("demo/raf.dat", "r");
 		raf.seek(2);
 		int i = 0;
-		int b = raf.read();//¶ÁÈ¡µ½Ò»¸ö×Ö½Ú
+		int b = raf.read();//è¯»å–åˆ°ä¸€ä¸ªå­—èŠ‚
 		System.out.println(raf.getFilePointer());
 		i = i | (b << 24 );
 		b = raf.read();

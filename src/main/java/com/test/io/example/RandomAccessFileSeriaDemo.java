@@ -16,9 +16,9 @@ public class RandomAccessFileSeriaDemo {
 		File file = new File(demo,"raf.dat");
 		if(!file.exists())
 			file.createNewFile();
-		//´ò¿ªÎÄ¼ş£¬½øĞĞËæ»ú¶ÁĞ´
+		//æ‰“å¼€æ–‡ä»¶ï¼Œè¿›è¡Œéšæœºè¯»å†™
 		RandomAccessFile raf = new RandomAccessFile(file, "rw");
-		/*ĞòÁĞ»¯*/
+		/*åºåˆ—åŒ–*/
 		int i = 0x7ffffff;
 		raf.write(i >>> 24);
 		raf.write(i >>> 16);
@@ -28,7 +28,7 @@ public class RandomAccessFileSeriaDemo {
 		System.out.println(raf.getFilePointer());
 		
 		
-		/*·´ĞòÁĞ»¯*/
+		/*ååºåˆ—åŒ–*/
 		raf.seek(0);
 		int b = raf.read();
 		i = i | (b << 24);

@@ -13,9 +13,9 @@ public class MyHttpServer {
 	private static final Logger logger = LoggerFactory.getLogger(MyHttpServer.class);
 	
 	public static void main(String[] args) {
-		Vertx vertx = Vertx.vertx();
-		vertx.deployVerticle(new VertxHttpServerVerticle());
-		vertx.deployVerticle(new SecondVerticle());
+//		Vertx vertx = Vertx.vertx();
+//		vertx.deployVerticle(new VertxHttpServerVerticle());
+//		vertx.deployVerticle(new SecondVerticle());
 		logger.info("main  end...");
 	}
 
@@ -30,22 +30,22 @@ class VertxHttpServerVerticle extends AbstractVerticle {
 	public void start() throws Exception {
 		logger.info("start.....");
 		HttpServer server = vertx.createHttpServer();
-		server.requestHandler(request -> {
-			logger.info("incoming httprequest!");
-			HttpServerResponse response = request.response();
-			response.setStatusCode(200);
-//			response.headers().add("Content-Type", "text/html") .add("Content-Length", String.valueOf(16));
-			response.setChunked(true);
-			response.headers().add("Content-Type", "text/html");
-			response.write("Vert.x is alive!");
-			try {
-				Thread.sleep(2000);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			response.end();
-		});
+//		server.requestHandler(request -> {
+//			logger.info("incoming httprequest!");
+//			HttpServerResponse response = request.response();
+//			response.setStatusCode(200);
+////			response.headers().add("Content-Type", "text/html") .add("Content-Length", String.valueOf(16));
+//			response.setChunked(true);
+//			response.headers().add("Content-Type", "text/html");
+//			response.write("Vert.x is alive!");
+//			try {
+//				Thread.sleep(2000);
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			response.end();
+//		});
 		server.listen(9999);
 	}
 

@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 
 public class BrAndBwOrPwDemo {
 	public static void main(String[] args) throws IOException{
-		 //¶ÔÎÄ¼ş½øĞĞ¶ÁĞ´²Ù×÷ 
+		 //å¯¹æ–‡ä»¶è¿›è¡Œè¯»å†™æ“ä½œ 
 		BufferedReader br = new BufferedReader(
 				new InputStreamReader(
 						new FileInputStream("e:\\javaio\\imooc.txt")));
@@ -22,10 +22,10 @@ public class BrAndBwOrPwDemo {
 		//PrintWriter pw1 = new PrintWriter(outputStream,boolean autoFlush);
 		String line ;
 		while((line = br.readLine())!=null){
-			System.out.println(line);//Ò»´Î¶ÁÒ»ĞĞ£¬²¢²»ÄÜÊ¶±ğ»»ĞĞ
+			System.out.println(line);//ä¸€æ¬¡è¯»ä¸€è¡Œï¼Œå¹¶ä¸èƒ½è¯†åˆ«æ¢è¡Œ
 			/*bw.write(line);
-			//µ¥¶ÀĞ´³ö»»ĞĞ²Ù×÷
-			bw.newLine();//»»ĞĞ²Ù×÷
+			//å•ç‹¬å†™å‡ºæ¢è¡Œæ“ä½œ
+			bw.newLine();//æ¢è¡Œæ“ä½œ
 			bw.flush();*/
 			pw.println(line);
 			pw.flush();

@@ -9,7 +9,7 @@ import java.io.OutputStreamWriter;
 public class IsrAndOswDemo {
 	public static void main(String[] args)throws IOException {
 		FileInputStream in = new FileInputStream("e:\\javaio\\imoocutf8.txt");
-		InputStreamReader isr = new InputStreamReader(in,"utf-8");//Ä¬ÈÏÏîÄ¿µÄ±àÂë,²Ù×÷µÄÊ±ºò£¬ÒªĞ´ÎÄ¼ş±¾ÉíµÄ±àÂë¸ñÊ½
+		InputStreamReader isr = new InputStreamReader(in,"utf-8");//é»˜è®¤é¡¹ç›®çš„ç¼–ç ,æ“ä½œçš„æ—¶å€™ï¼Œè¦å†™æ–‡ä»¶æœ¬èº«çš„ç¼–ç æ ¼å¼
 		FileOutputStream out = new FileOutputStream("e:\\javaio\\imoocutf81.txt");
 		OutputStreamWriter osw = new OutputStreamWriter(out,"utf-8");
 		/*int c ;
@@ -18,8 +18,8 @@ public class IsrAndOswDemo {
 		}*/
 		char[] buffer = new char[8*1024];
 		int c;
-		/*ÅúÁ¿¶ÁÈ¡£¬·ÅÈëbufferÕâ¸ö×Ö·ûÊı×é£¬´ÓµÚ0¸öÎ»ÖÃ¿ªÊ¼·ÅÖÃ£¬×î¶à·Åbuffer.length¸ö
-		  ·µ»ØµÄÊÇ¶Áµ½µÄ×Ö·ûµÄ¸öÊı
+		/*æ‰¹é‡è¯»å–ï¼Œæ”¾å…¥bufferè¿™ä¸ªå­—ç¬¦æ•°ç»„ï¼Œä»ç¬¬0ä¸ªä½ç½®å¼€å§‹æ”¾ç½®ï¼Œæœ€å¤šæ”¾buffer.lengthä¸ª
+		  è¿”å›çš„æ˜¯è¯»åˆ°çš„å­—ç¬¦çš„ä¸ªæ•°
 		*/
 		while(( c = isr.read(buffer,0,buffer.length))!=-1){
 			String s = new String(buffer,0,c);

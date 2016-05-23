@@ -12,5 +12,12 @@ public class JtomTest {
 		PersonImpl pi = (PersonImpl)app.getBean("personService");
 		pi.savePerson("2","lisi",20);
 	}
+	
+	@Test
+	public void testnoJtom() {
+		ApplicationContext app = new ClassPathXmlApplicationContext("classpath:spring-nojotm.xml");
+		PersonImpl pi = (PersonImpl)app.getBean("personService");
+		pi.savePerson("2","lisi",20);
+	}
 
 }

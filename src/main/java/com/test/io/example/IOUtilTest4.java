@@ -13,11 +13,11 @@ public class IOUtilTest4 {
 		try {
 			long start = System.currentTimeMillis();
 			/*IOUtil.copyFileByByte(new File("e:\\javaio\\1.mp3"), new File(
-					"e:\\javaio\\2.mp3"));*/  //Á½Íò¶àºÁÃë
+					"e:\\javaio\\2.mp3"));*/  //ä¸¤ä¸‡å¤šæ¯«ç§’
 			/*IOUtil.copyFileByBuffer(new File("e:\\javaio\\1.mp3"), new File(
-					"e:\\javaio\\3.mp3"));//Ò»Íò¶àºÁÃë*/
+					"e:\\javaio\\3.mp3"));//ä¸€ä¸‡å¤šæ¯«ç§’*/
 			IOUtil.copyFile(new File("e:\\javaio\\1.mp3"), new File(
-					"e:\\javaio\\4.mp3"));//7ºÁÃë
+					"e:\\javaio\\4.mp3"));//7æ¯«ç§’
 			long end = System.currentTimeMillis();
 			System.out.println(end - start );
 		} catch (IOException e) {

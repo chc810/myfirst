@@ -17,6 +17,11 @@ public class PersonImpl {
 		String sql = "insert into person values ('" + id + "','" + name + "'," + age + ")";
 		int a = jdbcTemplateA.update(sql);
 		System.out.println("a=" + a);
+		try {
+			Thread.sleep(20000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		int b = jdbcTemplateB.update(sql);
 		System.out.println("b=" + b);
 	}

@@ -9,19 +9,19 @@ import java.io.IOException;
 
 public class IOUtil {
 	/**
-	 * ¶ÁÈ¡Ö¸¶¨ÎÄ¼şÄÚÈİ£¬°´ÕÕ16½øÖÆÊä³öµ½¿ØÖÆÌ¨
-	 * ²¢ÇÒÃ¿Êä³ö10¸öbyte»»ĞĞ
+	 * è¯»å–æŒ‡å®šæ–‡ä»¶å†…å®¹ï¼ŒæŒ‰ç…§16è¿›åˆ¶è¾“å‡ºåˆ°æ§åˆ¶å°
+	 * å¹¶ä¸”æ¯è¾“å‡º10ä¸ªbyteæ¢è¡Œ
 	 * @param fileName
-	 * µ¥×Ö½Ú¶ÁÈ¡²»ÊÊºÏ´óÎÄ¼ş£¬´óÎÄ¼şĞ§ÂÊºÜµÍ
+	 * å•å­—èŠ‚è¯»å–ä¸é€‚åˆå¤§æ–‡ä»¶ï¼Œå¤§æ–‡ä»¶æ•ˆç‡å¾ˆä½
 	 */
 	public static void printHex(String fileName)throws IOException{
-		//°ÑÎÄ¼ş×÷Îª×Ö½ÚÁ÷½øĞĞ¶Á²Ù×÷
+		//æŠŠæ–‡ä»¶ä½œä¸ºå­—èŠ‚æµè¿›è¡Œè¯»æ“ä½œ
 		FileInputStream in = new FileInputStream(fileName);
 		int b ;
 		int i = 1;
 		while((b = in.read())!=-1){
 			if(b <= 0xf){
-				//µ¥Î»ÊıÇ°Ãæ²¹0
+				//å•ä½æ•°å‰é¢è¡¥0
 				System.out.print("0");
 			}
 			System.out.print(Integer.toHexString(b)+"  ");
@@ -32,7 +32,7 @@ public class IOUtil {
 		in.close();
 	}
 	
-	//Á½ÖÖ·½Ê½×ª»»byte --> int£¬ÔÚjavaÖĞbyteÄ¬ÈÏÊÇ-127µ½127ÓĞ¸ºÊı
+	//ä¸¤ç§æ–¹å¼è½¬æ¢byte --> intï¼Œåœ¨javaä¸­byteé»˜è®¤æ˜¯-127åˆ°127æœ‰è´Ÿæ•°
 	public static void printHex(byte[] bs)throws IOException{
 		int i = 1;
 //		for (byte b : bs) {
@@ -43,7 +43,7 @@ public class IOUtil {
 //				bb = b;
 //			}
 //			if(bb <= 0xf){
-//				//µ¥Î»ÊıÇ°Ãæ²¹0
+//				//å•ä½æ•°å‰é¢è¡¥0
 //				System.out.print("0");
 //			}
 //			System.out.print(Integer.toHexString(bb)+"  ");
@@ -54,7 +54,7 @@ public class IOUtil {
 		
 		for (byte b : bs) {
 			if((b & 0xff) <= 0xf){
-				//µ¥Î»ÊıÇ°Ãæ²¹0
+				//å•ä½æ•°å‰é¢è¡¥0
 				System.out.print("0");
 			}
 			System.out.print(Integer.toHexString(b & 0xff)+"  ");
@@ -64,18 +64,18 @@ public class IOUtil {
 		}
 	}
 	/**
-	 * ÅúÁ¿¶ÁÈ¡£¬¶Ô´óÎÄ¼ş¶øÑÔĞ§ÂÊ¸ß£¬Ò²ÊÇÎÒÃÇ×î³£ÓÃµÄ¶ÁÎÄ¼şµÄ·½Ê½
+	 * æ‰¹é‡è¯»å–ï¼Œå¯¹å¤§æ–‡ä»¶è€Œè¨€æ•ˆç‡é«˜ï¼Œä¹Ÿæ˜¯æˆ‘ä»¬æœ€å¸¸ç”¨çš„è¯»æ–‡ä»¶çš„æ–¹å¼
 	 * @param fileName
 	 * @throws IOException
 	 */
 	public static void printHexByByteArray(String fileName)throws IOException{
 		FileInputStream in = new FileInputStream(fileName);
 		byte[] buf = new byte[8 * 1024];
-		/*´ÓinÖĞÅúÁ¿¶ÁÈ¡×Ö½Ú£¬·ÅÈëµ½bufÕâ¸ö×Ö½ÚÊı×éÖĞ£¬
-		 * ´ÓµÚ0¸öÎ»ÖÃ¿ªÊ¼·Å£¬×î¶à·Åbuf.length¸ö 
-		 * ·µ»ØµÄÊÇ¶Áµ½µÄ×Ö½ÚµÄ¸öÊı
+		/*ä»inä¸­æ‰¹é‡è¯»å–å­—èŠ‚ï¼Œæ”¾å…¥åˆ°bufè¿™ä¸ªå­—èŠ‚æ•°ç»„ä¸­ï¼Œ
+		 * ä»ç¬¬0ä¸ªä½ç½®å¼€å§‹æ”¾ï¼Œæœ€å¤šæ”¾buf.lengthä¸ª 
+		 * è¿”å›çš„æ˜¯è¯»åˆ°çš„å­—èŠ‚çš„ä¸ªæ•°
 		*/
-		/*int bytes = in.read(buf,0,buf.length);//Ò»´ÎĞÔ¶ÁÍê£¬ËµÃ÷×Ö½ÚÊı×é×ã¹»´ó
+		/*int bytes = in.read(buf,0,buf.length);//ä¸€æ¬¡æ€§è¯»å®Œï¼Œè¯´æ˜å­—èŠ‚æ•°ç»„è¶³å¤Ÿå¤§
 		int j = 1; 
 		for(int i = 0; i < bytes;i++){
 			System.out.print(Integer.toHexString(buf[i] & 0xff)+"  ");
@@ -96,17 +96,17 @@ public class IOUtil {
 	  in.close();
 	}
 	/**
-	 * ÎÄ¼ş¿½±´£¬×Ö½ÚÅúÁ¿¶ÁÈ¡
+	 * æ–‡ä»¶æ‹·è´ï¼Œå­—èŠ‚æ‰¹é‡è¯»å–
 	 * @param srcFile
 	 * @param destFile
 	 * @throws IOException
 	 */
 	public static void copyFile(File srcFile,File destFile)throws IOException{
 		if(!srcFile.exists()){
-			throw new IllegalArgumentException("ÎÄ¼ş:"+srcFile+"²»´æÔÚ");
+			throw new IllegalArgumentException("æ–‡ä»¶:"+srcFile+"ä¸å­˜åœ¨");
 		}
 		if(!srcFile.isFile()){
-			throw new IllegalArgumentException(srcFile+"²»ÊÇÎÄ¼ş");
+			throw new IllegalArgumentException(srcFile+"ä¸æ˜¯æ–‡ä»¶");
 		}
 		FileInputStream in = new FileInputStream(srcFile);
 		FileOutputStream out = new FileOutputStream(destFile);
@@ -114,24 +114,24 @@ public class IOUtil {
 		int b ;
 	    while((b = in.read(buf,0,buf.length))!=-1){
 	    	out.write(buf,0,b);
-	    	out.flush();//×îºÃ¼ÓÉÏ
+	    	out.flush();//æœ€å¥½åŠ ä¸Š
 	    }
 	    in.close();
 	    out.close();
 		
 	}
 	/**
-	 * ½øĞĞÎÄ¼şµÄ¿½±´£¬ÀûÓÃ´ø»º³åµÄ×Ö½ÚÁ÷
+	 * è¿›è¡Œæ–‡ä»¶çš„æ‹·è´ï¼Œåˆ©ç”¨å¸¦ç¼“å†²çš„å­—èŠ‚æµ
 	 * @param srcFile
 	 * @param destFile
 	 * @throws IOException
 	 */
 	public static void copyFileByBuffer(File srcFile,File destFile)throws IOException{
 		if(!srcFile.exists()){
-			throw new IllegalArgumentException("ÎÄ¼ş:"+srcFile+"²»´æÔÚ");
+			throw new IllegalArgumentException("æ–‡ä»¶:"+srcFile+"ä¸å­˜åœ¨");
 		}
 		if(!srcFile.isFile()){
-			throw new IllegalArgumentException(srcFile+"²»ÊÇÎÄ¼ş");
+			throw new IllegalArgumentException(srcFile+"ä¸æ˜¯æ–‡ä»¶");
 		}
 		BufferedInputStream bis = new BufferedInputStream(
 				new FileInputStream(srcFile));
@@ -140,23 +140,23 @@ public class IOUtil {
 		int c ;
 		while((c = bis.read())!=-1){
 			bos.write(c);
-			bos.flush();//Ë¢ĞÂ»º³åÇø
+			bos.flush();//åˆ·æ–°ç¼“å†²åŒº
 		}
 		bis.close();
 		bos.close();
 	}
 	/**
-	 * µ¥×Ö½Ú£¬²»´ø»º³å½øĞĞÎÄ¼ş¿½±´
+	 * å•å­—èŠ‚ï¼Œä¸å¸¦ç¼“å†²è¿›è¡Œæ–‡ä»¶æ‹·è´
 	 * @param srcFile
 	 * @param destFile
 	 * @throws IOException
 	 */
 	public static void copyFileByByte(File srcFile,File destFile)throws IOException{
 		if(!srcFile.exists()){
-			throw new IllegalArgumentException("ÎÄ¼ş:"+srcFile+"²»´æÔÚ");
+			throw new IllegalArgumentException("æ–‡ä»¶:"+srcFile+"ä¸å­˜åœ¨");
 		}
 		if(!srcFile.isFile()){
-			throw new IllegalArgumentException(srcFile+"²»ÊÇÎÄ¼ş");
+			throw new IllegalArgumentException(srcFile+"ä¸æ˜¯æ–‡ä»¶");
 		}
 		FileInputStream in = new FileInputStream(srcFile);
 		FileOutputStream out = new FileOutputStream(destFile);

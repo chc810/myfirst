@@ -9,20 +9,20 @@ public class FileDemo {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// ÁË½â¹¹Ôìº¯ÊıµÄÇé¿ö  ²é°ïÖú
+		// äº†è§£æ„é€ å‡½æ•°çš„æƒ…å†µ  æŸ¥å¸®åŠ©
 		File file = new File("E:\\javaio\\imooc");
 		//System.out.println(file.exists());
 		if(!file.exists())
 			file.mkdir(); //file.mkdirs()
 		else
 			file.delete();
-		//ÊÇ·ñÊÇÒ»¸öÄ¿Â¼  Èç¹ûÊÇÄ¿Â¼·µ»Øtrue,Èç¹û²»ÊÇÄ¿Â¼orÄ¿Â¼²»´æÔÚ·µ»ØµÄÊÇfalse
+		//æ˜¯å¦æ˜¯ä¸€ä¸ªç›®å½•  å¦‚æœæ˜¯ç›®å½•è¿”å›true,å¦‚æœä¸æ˜¯ç›®å½•orç›®å½•ä¸å­˜åœ¨è¿”å›çš„æ˜¯false
 		System.out.println(file.isDirectory());
-		//ÊÇ·ñÊÇÒ»¸öÎÄ¼ş
+		//æ˜¯å¦æ˜¯ä¸€ä¸ªæ–‡ä»¶
 		System.out.println(file.isFile());
 		
-		//File file2 = new File("e:\\javaio\\ÈÕ¼Ç1.txt");
-		File file2 = new File("e:\\javaio","ÈÕ¼Ç1.txt");
+		//File file2 = new File("e:\\javaio\\æ—¥è®°1.txt");
+		File file2 = new File("e:\\javaio","æ—¥è®°1.txt");
 		if(!file2.exists())
 			try {
 				file2.createNewFile();
@@ -32,8 +32,8 @@ public class FileDemo {
 			}
 		else 
 			file2.delete();
-         //³£ÓÃµÄFile¶ÔÏóµÄAPI
-		System.out.println(file);//file.toString()µÄÄÚÈİ
+         //å¸¸ç”¨çš„Fileå¯¹è±¡çš„API
+		System.out.println(file);//file.toString()çš„å†…å®¹
 		System.out.println(file.getAbsolutePath());
 		System.out.println(file.getName());
 		System.out.println(file2.getName());

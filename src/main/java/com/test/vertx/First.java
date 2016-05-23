@@ -10,7 +10,7 @@ import org.junit.Test;
 public class First {
 	
 	public static void main(String[] args) {
-		Vertx vertx = Vertx.vertx();
+//		Vertx vertx = Vertx.vertx();
 //		vertx.deployVerticle(new BaseVerticle(), new Handler<AsyncResult<String>>() {
 //			
 //			@Override
@@ -18,10 +18,10 @@ public class First {
 //				System.out.println("异步完成");
 //			}
 //		});
-		vertx.deployVerticle(new BaseVerticle(), stringAsyn -> {
-			System.out.println("异步完成");
-		});
-		System.out.println("结束main...");
+//		vertx.deployVerticle(new BaseVerticle(), stringAsyn -> {
+//			System.out.println("异步完成");
+//		});
+//		System.out.println("结束main...");
 	}
 	
 //	@Test
