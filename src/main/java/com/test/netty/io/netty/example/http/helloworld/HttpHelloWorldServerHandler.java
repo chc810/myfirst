@@ -24,6 +24,9 @@ import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpHeaders;
 import io.netty.handler.codec.http.HttpRequest;
 
+import java.util.Iterator;
+import java.util.Map;
+
 import static io.netty.handler.codec.http.HttpHeaders.Names.*;
 import static io.netty.handler.codec.http.HttpHeaders.Values;
 import static io.netty.handler.codec.http.HttpResponseStatus.*;
@@ -44,6 +47,12 @@ public class HttpHelloWorldServerHandler extends ChannelInboundHandlerAdapter {
 
             if (HttpHeaders.is100ContinueExpected(req)) {
                 ctx.write(new DefaultFullHttpResponse(HTTP_1_1, CONTINUE));
+            }
+            Iterator<Map.Entry<String, String>> iterator = req.headers().iterator();
+            while (iterator.hasNext()) {
+                Map.Entry<String, String> e = iterator.next();
+
+                System.out.println(Thread.currentThread().getName() + " ----" + e.getKey() + ": "+ e.getValue());
             }
             boolean keepAlive = HttpHeaders.isKeepAlive(req);
             FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(CONTENT));
