@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/react.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<!--<script type="text/babel">
+    var style = {
+      color : "red",
+        border : "1px #000 solid"
+    };
+
+
+  var HelloWorld = React.createClass({
+      render : function () {
+          return <p>Hello, world</p>
+      }
+  });
+
+    ReactDOM.render(<div style={style}><HelloWorld></HelloWorld></div>, document.body);
+</script>-->
+
+
+
+<script type="text/babel">
+    var style = {
+        color : "red",
+        border : "1px #000 solid"
+    };
+
+
+    var HelloWorld = React.createClass({
+        render : function () {
+            return <p>Hello, {this.props.name ? this.props.name : "world"}</p>
+        }
+    });
+
+    ReactDOM.render(<div style={style}><HelloWorld name="Li"></HelloWorld></div>, document.body);
+</script>
+</body>
+</html>
