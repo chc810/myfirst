@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/react.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <title>评论</title>
+</head>
+<body>
+<div id="example"></div>
+
+
+<script type="text/babel">
+
+
+    var Comment = React.createClass({
+        getDefaultProps: function () {
+            console.info("getDefaultProps");
+            return {age: 12};
+        },
+        getInitialState: function () {
+            console.info("getInitialState");
+            console.info(this.props);
+            return {};
+        },
+        componentWillMount: function () {
+            console.info("componentWillMount");
+        },
+        componentDidMount: function () {
+            console.info("componentDidMount");
+        },
+        componentWillUnmount: function () {
+            console.info("componentWillUnmount");
+        },
+        render: function () {
+            return (
+            <div>
+                <select>
+                    <option value="1">张三</option>
+                    <option value="2">李四</option>
+                    <option value="3">王五</option>
+                </select>
+                <br/>
+                <Content></Content>
+            </div>);
+
+        }
+    });
+
+    var Content = React.createClass({
+        getInitialState : function() {
+            return {content: ""};
+        },
+        getContent : function(event) {
+          this.setState({content : event.target.value})
+        },
+        render: function () {
+            return <div>
+                <p>{this.state.content}</p>
+            <textarea placeholder="input your comment..." onChange={this.getContent}></textarea>
+            </div>
+        }
+    });
+
+    ReactDOM.render(<Comment></Comment>,
+            document.getElementById("example"));
+</script>
+</body>
+</html>

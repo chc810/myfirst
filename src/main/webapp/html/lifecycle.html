@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/react.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="example"></div>
+
+
+<script type="text/babel">
+    var style = {
+        color: "red",
+        border: "1px #000 solid"
+    };
+
+
+    var HelloWorld = React.createClass({
+        getDefaultProps: function () {
+            console.info("getDefaultProps");
+            return {age:12};
+        },
+        getInitialState: function () {
+            console.info("getInitialState");
+            console.info(this.props);
+            return null;
+        },
+        componentWillMount: function () {
+            console.info("componentWillMount");
+        },
+        componentDidMount: function () {
+            console.info("componentDidMount");
+        },
+        componentWillUnmount: function () {
+            console.info("componentWillUnmount");
+        },
+        render: function () {
+            console.info("render");
+            return (<p>Hello, {this.props.name ? this.props.name : "world"}</p>)
+        }
+    });
+    console.info("ddd");
+    ReactDOM.render(<div style={style}><HelloWorld name={style.border}></HelloWorld></div>,
+            document.getElementById("example"));
+</script>
+</body>
+</html>
